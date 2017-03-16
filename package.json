@@ -1,0 +1,24 @@
+{
+  "name": "penguin-component-list-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -w index.js -x micro",
+    "start-now": "NODE_ENV=production micro"
+  },
+  "keywords": [],
+  "author": "Dominik Burgdörfer <db@domachine.de> (https://domachine.de/)",
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^7.1.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "config": {
+    "url": "https://registry.npmjs.org/-/_view/byKeyword?startkey=%5B%22penguinjs%22%5D&endkey=%5B%22penguinjs%22,%7B%7D%5D&group_level=3"
+  }
+}
