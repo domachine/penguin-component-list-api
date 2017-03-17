@@ -12,8 +12,8 @@
   "author": "Dominik Burgdörfer <db@domachine.de> (https://domachine.de/)",
   "license": "MIT",
   "dependencies": {
-    "micro": "^7.1.0",
-    "request": "^2.81.0"
+    "http-proxy": "^1.16.2",
+    "micro": "^7.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

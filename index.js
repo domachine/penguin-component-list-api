@@ -1,15 +1,16 @@
 'use strict'
 
-const request = require('request')
-const { sendError } = require('micro')
+const url = require('url')
+const { createProxyServer } = require('http-proxy')
+
+const target = url.parse(process.env.npm_package_config_url)
+const proxy = createProxyServer({
+  target: process.env.npm_package_config_url
+})
 
 module.exports = (req, res) => {
-  request(process.env.npm_package_config_url)
-    .on('error', err => sendError(req, res, err))
-    .on('response', r => {
-      res.statusCode = r.statusCode
-      res.setHeader('Content-Type', 'application/json')
-      res.setHeader('Access-Control-Allow-Origin', '*')
-      r.pipe(res)
-    })
+  req.url = ''
+  req.headers.host = target.host
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  proxy.web(req, res)
 }
